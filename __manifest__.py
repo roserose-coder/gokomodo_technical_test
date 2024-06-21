@@ -10,7 +10,7 @@
 
     ],
     'data': [
-       # 'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
         'data/business_model_data.xml',
         'views/sale.xml',
         'views/account.xml',
