@@ -4,10 +4,10 @@
          <record id="material_type_fabric" model="business.model">
             <field name="name">Retail</field>
         </record>
-        <record id="material_type_jeans" model="business">
+        <record id="material_type_jeans" model="business.model">
             <field name="name">Corporate</field>
         </record>
-        <record id="material_type_cotton" model="material.type">
+        <record id="material_type_cotton" model="business.model">
             <field name="name">Subscription</field>
         </record>
     </data>

@@ -5,11 +5,15 @@
     'description': "Create selection of Taxes based on its Business model",
     'depends': [
         'base',
+        'account',
+        'sale_management'
 
     ],
     'data': [
        # 'security/ir.model.access.csv',
-       #  'data/material_type.xml'
+        'data/business_model_data.xml',
+        'views/sale.xml',
+        'views/account.xml',
     ],
     'installable': True,
     'application': True,
