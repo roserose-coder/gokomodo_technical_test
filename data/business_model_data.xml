@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+         <record id="material_type_fabric" model="business.model">
+            <field name="name">Retail</field>
+        </record>
+        <record id="material_type_jeans" model="business">
+            <field name="name">Corporate</field>
+        </record>
+        <record id="material_type_cotton" model="material.type">
+            <field name="name">Subscription</field>
+        </record>
+    </data>
+</odoo>
