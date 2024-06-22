@@ -9,6 +9,40 @@
             <xpath expr="//field[@name='payment_term_id']" position="after">
                 <field name="x_business_model" />
             </xpath>
+             <xpath expr="//field[@name='tax_id']" position="before">
+                <field name="related_business_model" invisible="1"/>
+            </xpath>
+            <xpath expr="//field[@name='tax_id']" position="attributes">
+                <attribute name="domain">[('type_tax_use','=','sale'),('company_id','=',parent.company_id),('x_business_model','=',related_business_model)]</attribute>
+            </xpath>
         </field>
     </record>
+
+    <record id="sale_order_view_search_inherit_sale" model="ir.ui.view">
+        <field name="name">sale.order.search.inherit.sale.business.model</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.sale_order_view_search_inherit_sale"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='order_date']" position="after">
+                <filter string="Business Model" name="business_model" context="{'group_by':'x_business_model'}"/>
+            </xpath>
+        </field>
+    </record>
+
+
+<!--    <record id="sale_order_form_inherit_business_model" model="ir.ui.view">-->
+<!--        <field name="name">sale.order.form.inherit.business.model</field>-->
+<!--        <field name="model">sale.order</field>-->
+<!--        <field name="inherit_id" ref="sale.view_order_form"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <xpath expr="//field[@name='tax_id']" position="before">-->
+<!--                <field name="order_id" invisible="1"/>-->
+<!--            </xpath>-->
+<!--            <xpath expr="//field[@name='tax_id']" position="attributes">-->
+<!--                <attribute name="domain">[('type_tax_use','=','sale'),('company_id','=',parent.company_id),('x_business_model','=',order_id.x_business_model)]</attribute>-->
+<!--            </xpath>-->
+<!--        </field>-->
+<!--    </record>-->
+
+
 </odoo>

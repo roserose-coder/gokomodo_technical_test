@@ -3,7 +3,7 @@ from odoo import api, models, fields
 class SaleOrderInherit(models.Model):
     _inherit = "sale.order"
 
-    x_business_model =fields.Many2one('business.model',string ="Business Model")
+    x_business_model =fields.Many2one('business.model',string ="Business Model",required=True)
 
     def name_get(self):
         result = []
@@ -14,3 +14,8 @@ class SaleOrderInherit(models.Model):
             result.append((rec.id, name))
         return result
 
+
+
+class SaleOrderLine(models.Model):
+    _inherit = "sale.order.line"
+    related_business_model = fields.Many2one(related='order_id.x_business_model',string ="Test",readonly=True)
