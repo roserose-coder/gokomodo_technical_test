@@ -3,12 +3,15 @@
     <data>
          <record id="material_type_fabric" model="business.model">
             <field name="name">Retail</field>
+              <field name="code">RT</field>
         </record>
         <record id="material_type_jeans" model="business.model">
             <field name="name">Corporate</field>
+             <field name="code">CORP</field>
         </record>
         <record id="material_type_cotton" model="business.model">
             <field name="name">Subscription</field>
+             <field name="code">SUB</field>
         </record>
     </data>
 </odoo>
